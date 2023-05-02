@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor;
 using UnityEngine.Serialization;
 
 public class MouvementPlayer : MonoBehaviour
@@ -29,6 +30,8 @@ public class MouvementPlayer : MonoBehaviour
     public float ValueXLimitLeft;
     public float ValueXLimitRight;
     private float actualValue;
+    
+    
 
     public void Awake() {
         _asTp = false;
