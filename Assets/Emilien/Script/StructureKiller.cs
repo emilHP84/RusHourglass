@@ -12,7 +12,7 @@ public class StructureKiller : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) {
         if (other.name == "Player") {
-            Destroy(Player);
+            Player.SetActive(false);
         }
         
     }
