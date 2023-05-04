@@ -8,7 +8,9 @@ public class DeathUI : MonoBehaviour
 {
     public GameObject Player;
 
-    
+    public void Start() {
+        gameObject.SetActive(false);
+    }
 
     public void Continue() { 
         Player.SetActive(true);  

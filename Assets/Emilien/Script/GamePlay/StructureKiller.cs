@@ -6,12 +6,11 @@ using UnityEngine;
 public class StructureKiller : MonoBehaviour
 {
     private GameObject Player;
-    
-    // ui (à modifier)
-    private GameObject UI;
+    public GameObject UI;
+
     public void Awake() {
         Player = GameObject.Find("Player");
-        UI = GameObject.Find("PanelMort");
+        UI = GameObject.Find("PanelDeadOfPlayer");
     }
     
     private void OnTriggerEnter(Collider other) {
