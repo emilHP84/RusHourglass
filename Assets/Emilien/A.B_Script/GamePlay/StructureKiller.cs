@@ -1,24 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class StructureKiller : MonoBehaviour
 {
     private GameObject Player;
+    [SerializeField]private RectTransform UI;
     
-    // ui (à modifier)
-    private GameObject UI;
-    public void Awake() {
+    public void Update() {
         Player = GameObject.Find("Player");
-        UI = GameObject.Find("PanelMort");
+        UI = GameObject.Find("PanelMort").GetComponent<RectTransform>();
     }
-    
+
     private void OnTriggerEnter(Collider other) {
         if (other.name == "Player") {
             Player.SetActive(false);
-            UI.SetActive(true);
+            UI.DOAnchorPos(new Vector2(0, 0), 0.2f, false);
         }
-        
     }
 }
