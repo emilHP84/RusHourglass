@@ -14,7 +14,7 @@ public class StructureKiller : MonoBehaviour
         UI = GameObject.Find("PanelMort").GetComponent<RectTransform>();
     }
 
-    private void OnTriggerEnter(Collider other) {
+    public void OnTriggerEnter(Collider other) {
         if (other.name == "Player") {
             Player.SetActive(false);
             UI.DOAnchorPos(new Vector2(0, 0), 0.2f, false);
