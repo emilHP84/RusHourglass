@@ -10,6 +10,7 @@ public class MouvementPlayer : MonoBehaviour
 {
     [Header("Special")]
     public Camera cam;
+    public InventoryPlayer _InventoryPlayer;
     public GameObject CameraOne;
     public GameObject CameraTwo;
     
@@ -23,7 +24,7 @@ public class MouvementPlayer : MonoBehaviour
     
     [Header("speed")] 
     public float duringDash;
-    public float dashDelay;
+    public float AddPointsTime;
 
     [Header("Valeur fluctuante")] 
     public float ValueXNormal;
@@ -38,8 +39,9 @@ public class MouvementPlayer : MonoBehaviour
     }
 
     public void Start() {
-        dashDelay = 0;
+        AddPointsTime = 0;
         camPosition = cam.transform.position;
+        _InventoryPlayer.pointNumber += 1;
 
         ValueXNormal = 0;
         ValueXLimitRight = 1;
@@ -47,7 +49,16 @@ public class MouvementPlayer : MonoBehaviour
     }
 
     public void Update() {
-        dashDelay -= Time.deltaTime;
+        AddPointsTime += Time.deltaTime;
+        
+        if (gameObject.activeSelf == false) {
+            _InventoryPlayer.pointNumber += 0;
+        } 
+        else if (AddPointsTime >= 0.2) {
+            _InventoryPlayer.pointNumber += 1;
+            AddPointsTime = 0;
+        }
+        
         
         if (Input.GetKeyUp(KeyCode.Space)) {
             if (_asTp == false) {

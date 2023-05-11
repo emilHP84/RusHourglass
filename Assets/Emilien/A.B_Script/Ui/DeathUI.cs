@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class DeathUI : MonoBehaviour
 {
+    
     public GameObject Player;
     public RectTransform ThisUI;
+    public InventoryPlayer _InventoryPlayer;
 
     public void Awake() {
         ThisUI = gameObject.GetComponent<RectTransform>();
@@ -17,12 +19,18 @@ public class DeathUI : MonoBehaviour
         ThisUI.DOAnchorPos(new Vector2(0, 2436),0,false);
     }
 
-    public void Continue() { 
-        Player.SetActive(true);
-        ThisUI.DOAnchorPos(new Vector2(0, 2436),0.2f,false);
+    public void Continue() {
+        if (_InventoryPlayer.pieceNumber >= 50)
+        {
+            _InventoryPlayer.pieceNumber -= 50;
+            Player.SetActive(true);
+            ThisUI.DOAnchorPos(new Vector2(0, 2436), 0.2f, false);
+        }
+        else return;
     }
+    
     public void Retry() {
-        SceneManager.LoadScene("emilienTest");
+        SceneManager.LoadScene("SampleScene");
         ThisUI.DOAnchorPos(new Vector2(0,2436 ),0.2f,false);
     }
     public void Quit() {
