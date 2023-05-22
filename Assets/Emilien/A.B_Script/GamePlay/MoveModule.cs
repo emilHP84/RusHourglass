@@ -14,12 +14,11 @@ public class MoveModule : MonoBehaviour
     }
 
     public void FixedUpdate() {
-        transform.parent = null;
         Moving();
     }
     
     void Moving() {
-        transform.position += Vector3.back * _speed * Time.deltaTime;
+        transform.position += Vector3.back * (_speed * Time.deltaTime);
     }
 }
 

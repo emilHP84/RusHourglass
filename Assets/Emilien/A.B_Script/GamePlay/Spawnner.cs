@@ -5,19 +5,12 @@ using UnityEngine.Serialization;
 
 public class Spawnner : MonoBehaviour
 {
-    [Header("Liste module:")] 
-    public List<GameObject> ModernModule = new List<GameObject>();
-    public List<GameObject> IndustrialModule = new List<GameObject>();
 
-    [FormerlySerializedAs("IndustrialTransformInstanee")] [Header("Instanciate object")] 
-    public GameObject IndustrialTransformInstance;
-    public GameObject ModernTransformInstance;
-    
-    private GameObject InstantiateObject;
-    private GameObject InstantiateObjectVariant;
-    
+    [Header("Instanciate object")]
+    public GameObject Module;
+    public GameObject TransformInstance;
+
     public float spawnTime;
-    
     
     private float time;
     private bool canInstance;
@@ -27,23 +20,12 @@ public class Spawnner : MonoBehaviour
         canInstance = true;
     }
     
-    public void RandomizeModule() {
-        int moduleChoose = Random.Range(0, 9);
-        InstantiateObject = ModernModule[moduleChoose];
-        InstantiateObjectVariant = IndustrialModule[moduleChoose];
-    }
-    
     public void FixedUpdate() {
         time += Time.deltaTime;
-        transform.parent = null;
-        
-        if (time >= spawnTime && canInstance == true) { 
-            RandomizeModule();
-            Instantiate(InstantiateObject, ModernTransformInstance.transform);
-            Instantiate(InstantiateObjectVariant, IndustrialTransformInstance.transform);
+
+        if (time >= spawnTime && canInstance) {
+            Instantiate(Module, TransformInstance.transform.position, Module.transform.rotation);
             time = 0;
         }
     }
-
-    
 }
