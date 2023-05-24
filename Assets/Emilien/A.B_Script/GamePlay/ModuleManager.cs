@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 
 public class ModuleManager : MonoBehaviour
 { 
-    public GameObject TransformInstance;
+    public GameObject TransformInstanceOne;
+    public GameObject TransformInstanceTwo;
 
     [Header("Liste Transform:")] 
     public List<GameObject> transformHouseModern = new List<GameObject>();
@@ -24,17 +25,15 @@ public class ModuleManager : MonoBehaviour
     private int houseChoose;
 
     private void OnEnable() {
-        Debug.Log("test");
         moduleChoose = Random.Range(0, 9);
-        //Instantiate(modernModule[moduleChoose], TransformInstance.transform);
+        Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
+        Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
         
         
-        Debug.Log("TH Count " + transformHouseModern.Count);
         for (int i = 0; i < 6; i++) {
             houseChoose = Random.Range(0, 5);
             Instantiate(ModernHouse[houseChoose],transformHouseModern[i].transform );
             Instantiate(IndustrialHouse[houseChoose],transformHouseIndustrial[i].transform );
-            Debug.Log("Test " + i + " HouseChoose " + houseChoose);
         }
     }
 }

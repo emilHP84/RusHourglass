@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5578903005836531329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982770765042394979}
+  m_Layer: 0
+  m_Name: difficultyModuleModern
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982770765042394979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5578903005836531329}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6931521506948603206}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6322465175445564748
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +211,9 @@ Transform:
   - {fileID: 6931521505793528546}
   - {fileID: 6931521506746010705}
   - {fileID: 935759286664380082}
+  - {fileID: 4160131784691531578}
   m_Father: {fileID: 6931521506948603206}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6931521505704296989
 GameObject:
@@ -550,7 +582,7 @@ Transform:
   - {fileID: 6931521505704296988}
   - {fileID: 6931521505711477171}
   m_Father: {fileID: 6931521506948603206}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6931521506765969884
 GameObject:
@@ -613,6 +645,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 982770765042394979}
   - {fileID: 6931521505504632551}
   - {fileID: 6931521506756764805}
   m_Father: {fileID: 0}
@@ -643,7 +676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951af9c81946b374184f674ca3fc2d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransformInstance: {fileID: 6322465175445564748}
+  TransformInstanceOne: {fileID: 5578903005836531329}
+  TransformInstanceTwo: {fileID: 7334341873379543541}
   transformHouseModern:
   - {fileID: 6931521507104095035}
   - {fileID: 6931521505710639867}
@@ -659,27 +693,27 @@ MonoBehaviour:
   - {fileID: 6931521505454385122}
   - {fileID: 6931521505704296989}
   modernModule:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8588477799866296421, guid: 76a79ee06c26af04cb1e9410e0581f13, type: 3}
+  - {fileID: 8588477799866296421, guid: 3ab8f7cf235d8bc49ac2e7b7937c606e, type: 3}
+  - {fileID: 8588477799866296421, guid: 77bc6a593850af44ab556aecf1f05051, type: 3}
+  - {fileID: 8588477799866296421, guid: e8ba9cc220eecb647b4074b30e4369ab, type: 3}
+  - {fileID: 8588477799866296421, guid: 2df5bd855a1a1914ba614bfc857b9484, type: 3}
+  - {fileID: 8588477799866296421, guid: 80127791ee8ebf843b3cced1957a3a98, type: 3}
+  - {fileID: 8588477799866296421, guid: 18bc7b6b229c63b4082925fc3a26b6ca, type: 3}
+  - {fileID: 8588477799866296421, guid: 16806491a306e98459fbed655186ac47, type: 3}
+  - {fileID: 8588477799866296421, guid: e94810d216806ca4a81b10065291711a, type: 3}
+  - {fileID: 8588477799866296421, guid: 22aac9176b7c9c44e9be1c7ba73b554a, type: 3}
   industrialModule:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8588477799866296421, guid: b23f1ef6f57124445a1f0be08c428b0b, type: 3}
+  - {fileID: 8588477799866296421, guid: 4f68a4d4bb6cee24b9c6bd4521a82e13, type: 3}
+  - {fileID: 8588477799866296421, guid: 5c41c6f8160cf6e4499810a262423b1c, type: 3}
+  - {fileID: 8588477799866296421, guid: fc369da20ce8096458b1830189806f29, type: 3}
+  - {fileID: 8588477799866296421, guid: 89b4a13d45bb68e4d99bd8abd798af6c, type: 3}
+  - {fileID: 8588477799866296421, guid: cecf1434a9576d946a932acd1df5081d, type: 3}
+  - {fileID: 8588477799866296421, guid: c341ace9f48a96844b87ae55fdc2fb16, type: 3}
+  - {fileID: 8588477799866296421, guid: 9de046bff42757e49b3b74dc63ed6cfd, type: 3}
+  - {fileID: 8588477799866296421, guid: 179118d99f8be2345adb9be20c4b12dd, type: 3}
+  - {fileID: 8588477799866296421, guid: 283584a5e021a764ba6e090b22a89d70, type: 3}
   ModernHouse:
   - {fileID: 1874758451640736323, guid: 5c441cb4c0f25fb45a8924ba5451644f, type: 3}
   - {fileID: 1874758451640736323, guid: 5c441cb4c0f25fb45a8924ba5451644f, type: 3}
@@ -724,4 +758,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6931521505504632551}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7334341873379543541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4160131784691531578}
+  m_Layer: 0
+  m_Name: difficultyModuleIndustrial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4160131784691531578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334341873379543541}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6931521505504632551}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

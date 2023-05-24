@@ -66,10 +66,10 @@ public class MouvementPlayer : MonoBehaviour
                CameraOne.SetActive(false);
                CameraTwo.SetActive(true);
                
-               ValueXNormal += 25;
-               ValueXLimitRight += 25;
-               ValueXLimitLeft += 25;
-               actualValue += 25;
+               ValueXNormal += 30;
+               ValueXLimitRight += 30;
+               ValueXLimitLeft += 30;
+               actualValue += 30;
                 
                 gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
                 return;
@@ -79,10 +79,10 @@ public class MouvementPlayer : MonoBehaviour
                 CameraOne.SetActive(true);
                 CameraTwo.SetActive(false);
 
-                ValueXNormal -= 25;
-                ValueXLimitRight -= 25;
-                ValueXLimitLeft -= 25;
-                actualValue -= 25;
+                ValueXNormal -= 30;
+                ValueXLimitRight -= 30;
+                ValueXLimitLeft -= 30;
+                actualValue -= 30;
                 
                 gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
                 return;
