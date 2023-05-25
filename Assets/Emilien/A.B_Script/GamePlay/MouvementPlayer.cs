@@ -32,8 +32,6 @@ public class MouvementPlayer : MonoBehaviour
     public float ValueXLimitRight;
     private float actualValue;
     
-    
-
     public void Awake() {
         _asTp = false;
     }

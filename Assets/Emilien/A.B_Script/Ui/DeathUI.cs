@@ -11,6 +11,7 @@ public class DeathUI : MonoBehaviour
     public GameObject Player;
     public RectTransform ThisUI;
     public InventoryPlayer _InventoryPlayer;
+    public DataSave _DataSave;
 
     public void Awake() {
         ThisUI = gameObject.GetComponent<RectTransform>();
@@ -20,8 +21,7 @@ public class DeathUI : MonoBehaviour
     }
 
     public void Continue() {
-        if (_InventoryPlayer.pieceNumber >= 50)
-        {
+        if (_InventoryPlayer.pieceNumber >= 50) {
             _InventoryPlayer.pieceNumber -= 50;
             Player.SetActive(true);
             ThisUI.DOAnchorPos(new Vector2(0, 2436), 0.2f, false);
@@ -34,8 +34,8 @@ public class DeathUI : MonoBehaviour
         ThisUI.DOAnchorPos(new Vector2(0,2436 ),0.2f,false);
     }
     public void Quit() {
-        // retour au menu de base
+        _DataSave.SaveToJson();
+        SceneManager.LoadScene("");
         ThisUI.DOAnchorPos(new Vector2(0, 2436),0.2f,false);
-        
     }
 }

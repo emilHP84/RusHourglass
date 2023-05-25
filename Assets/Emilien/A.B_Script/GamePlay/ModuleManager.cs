@@ -29,7 +29,6 @@ public class ModuleManager : MonoBehaviour
         Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
         Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
         
-        
         for (int i = 0; i < 6; i++) {
             houseChoose = Random.Range(0, 5);
             Instantiate(ModernHouse[houseChoose],transformHouseModern[i].transform );
