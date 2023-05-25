@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d9eddae25ecdc418e8359d3ab63dcf, type: 3}
   m_Name: DataInventoryPlayer
   m_EditorClassIdentifier: 
-  pieceNumber: 1000
-  pointNumber: 41
+  pieceNumber: 50
+  pointNumber: 0
+  PointsNumberReccord: 0
