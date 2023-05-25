@@ -16,6 +16,9 @@ public class MouvementPlayer : MonoBehaviour
     
     private Vector3 camPosition;
 
+    private Vector2 StartTouch;
+    private Vector2 EndTouch;
+
     public bool _asTp;
     
     [Header("possible to move? :")]
@@ -56,8 +59,7 @@ public class MouvementPlayer : MonoBehaviour
             _InventoryPlayer.pointNumber += 1;
             AddPointsTime = 0;
         }
-        
-        
+
         if (Input.GetKeyUp(KeyCode.Space)) {
             if (_asTp == false) {
                _asTp = true;
@@ -88,6 +90,55 @@ public class MouvementPlayer : MonoBehaviour
             return;
         }
         Mouvement();
+    }
+
+    public void Swipe() {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+            StartTouch = Input.GetTouch(0).position;
+            if (EndTouch.y > StartTouch.y) {
+                Left();
+            }
+        }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
+            EndTouch = Input.GetTouch(0).position;
+
+            if (EndTouch.x < StartTouch.x) {
+                Left();
+            }
+            if (EndTouch.x > StartTouch.x) {
+                Right();
+            }
+            if (EndTouch.y <= StartTouch.y) {
+                Right();
+            }
+        }
+    }
+
+    public void Right() {
+        if (possibleLeftMove == false && possibleRightMove == true) {
+            actualValue = ValueXNormal;
+            gameObject.transform.DOMove(new Vector3(ValueXNormal, 0.75f, 0), duringDash);
+            cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+        }
+        if (possibleRightMove == true && possibleLeftMove == true) {
+            actualValue = ValueXLimitRight;
+            gameObject.transform.DOMove(new Vector3(ValueXLimitRight, 0.75f, 0), duringDash);
+            cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+        }
+    }
+    
+    public void Left() {
+        if (possibleLeftMove == true && possibleRightMove == false) {
+            actualValue = ValueXNormal;
+            gameObject.transform.DOMove(new Vector3(ValueXNormal, 0.75f, 0), duringDash);
+            cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);
+        }
+        if (possibleLeftMove == true && possibleRightMove == true) {
+            actualValue = ValueXLimitLeft;
+            gameObject.transform.DOMove(new Vector3(ValueXLimitLeft, 0.75f, 0), duringDash);
+            cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+        }
     }
 
     public void Mouvement() {
