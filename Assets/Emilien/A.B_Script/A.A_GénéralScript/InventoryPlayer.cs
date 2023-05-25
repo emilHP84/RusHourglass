@@ -7,4 +7,5 @@ public class InventoryPlayer : ScriptableObject
 {
     public int pieceNumber;
     public int pointNumber;
+    public int PointsNumberReccord;
 }
