@@ -27,7 +27,7 @@ public class ModuleManager : MonoBehaviour
     private int houseChoose;
 
     private void OnEnable() {
-        moduleChoose = Random.Range(0, 9);
+        moduleChoose = Random.Range(0, 14);
         Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
         Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
 
