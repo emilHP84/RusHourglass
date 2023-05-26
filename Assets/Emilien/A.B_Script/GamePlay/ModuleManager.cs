@@ -16,6 +16,8 @@ public class ModuleManager : MonoBehaviour
     [Header("Liste module Difficulty:")] 
     public List<GameObject> modernModule = new List<GameObject>();
     public List<GameObject> industrialModule = new List<GameObject>();
+    public List<GameObject> roadModernModule = new List<GameObject>();
+    public List<GameObject> roadIndustrialModule = new List<GameObject>();
     
     [Header("Liste module House:")] 
     public List<GameObject> ModernHouse = new List<GameObject>();
@@ -28,6 +30,19 @@ public class ModuleManager : MonoBehaviour
         moduleChoose = Random.Range(0, 9);
         Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
         Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
+
+        if (moduleChoose == 1) {
+            Instantiate(roadModernModule[0], TransformInstanceOne.transform);
+            Instantiate(roadIndustrialModule[0], TransformInstanceTwo.transform);
+        }
+        else if (moduleChoose == 2) {
+            Instantiate(roadModernModule[1], TransformInstanceOne.transform); 
+            Instantiate(roadIndustrialModule[1], TransformInstanceTwo.transform);
+        }
+        else if (moduleChoose >= 3) {
+            Instantiate(roadModernModule[2], TransformInstanceOne.transform); 
+            Instantiate(roadIndustrialModule[2], TransformInstanceTwo.transform);
+        }
         
         for (int i = 0; i < 6; i++) {
             houseChoose = Random.Range(0, 5);
