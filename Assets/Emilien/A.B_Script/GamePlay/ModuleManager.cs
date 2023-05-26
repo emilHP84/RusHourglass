@@ -31,23 +31,23 @@ public class ModuleManager : MonoBehaviour
         Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
         Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
 
-        if (moduleChoose == 1) {
+        if (moduleChoose == 0) {
             Instantiate(roadModernModule[0], TransformInstanceOne.transform);
             Instantiate(roadIndustrialModule[0], TransformInstanceTwo.transform);
         }
-        else if (moduleChoose == 2) {
+        else if (moduleChoose == 1) {
             Instantiate(roadModernModule[1], TransformInstanceOne.transform); 
             Instantiate(roadIndustrialModule[1], TransformInstanceTwo.transform);
         }
-        else if (moduleChoose >= 3) {
+        else if (moduleChoose >= 2) {
             Instantiate(roadModernModule[2], TransformInstanceOne.transform); 
             Instantiate(roadIndustrialModule[2], TransformInstanceTwo.transform);
-        }
-        
-        for (int i = 0; i < 6; i++) {
-            houseChoose = Random.Range(0, 5);
-            Instantiate(ModernHouse[houseChoose],transformHouseModern[i].transform );
-            Instantiate(IndustrialHouse[houseChoose],transformHouseIndustrial[i].transform );
+            
+            for (int i = 0; i < 6; i++) {
+                houseChoose = Random.Range(0, 5);
+                Instantiate(ModernHouse[houseChoose],transformHouseModern[i].transform );
+                Instantiate(IndustrialHouse[houseChoose],transformHouseIndustrial[i].transform );
+            }
         }
     }
 }
