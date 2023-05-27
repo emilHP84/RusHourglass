@@ -110,7 +110,7 @@ public class MouvementPlayer : MonoBehaviour
                 Right();
             }
             if (EndTouch.y <= StartTouch.y) {
-                Right();
+                return;
             }
         }
     }

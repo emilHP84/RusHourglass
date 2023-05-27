@@ -27,7 +27,7 @@ public class ModuleManager : MonoBehaviour
     private int houseChoose;
 
     private void OnEnable() {
-        moduleChoose = Random.Range(0, 14);
+        moduleChoose = Random.Range(0,16);
         Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
         Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
 
@@ -44,7 +44,7 @@ public class ModuleManager : MonoBehaviour
             Instantiate(roadIndustrialModule[2], TransformInstanceTwo.transform);
             
             for (int i = 0; i < 6; i++) {
-                houseChoose = Random.Range(0, 5);
+                houseChoose = Random.Range(0, 7);
                 Instantiate(ModernHouse[houseChoose],transformHouseModern[i].transform );
                 Instantiate(IndustrialHouse[houseChoose],transformHouseIndustrial[i].transform );
             }
