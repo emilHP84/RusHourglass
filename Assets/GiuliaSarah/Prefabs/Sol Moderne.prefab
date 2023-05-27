@@ -272,8 +272,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7172985163246327959}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: 33}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -282,9 +282,13 @@ Transform:
   - {fileID: 4509805118811123212}
   - {fileID: 8294575667894670157}
   - {fileID: 4383798976038781210}
+  - {fileID: 644349076085002703}
+  - {fileID: 8744368464598645268}
+  - {fileID: 5823943033197446306}
+  - {fileID: 678131386261350735}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7390622829435224213
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,3 +455,251 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &346963945705935944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7548104086722282029}
+    m_Modifications:
+    - target: {fileID: 500547812853639101, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_Name
+      value: Lampadaire Moderne (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+--- !u!4 &678131386261350735 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+  m_PrefabInstance: {fileID: 346963945705935944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &380744572867243208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7548104086722282029}
+    m_Modifications:
+    - target: {fileID: 500547812853639101, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_Name
+      value: Lampadaire Moderne
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+--- !u!4 &644349076085002703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+  m_PrefabInstance: {fileID: 380744572867243208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6731562496803830181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7548104086722282029}
+    m_Modifications:
+    - target: {fileID: 500547812853639101, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_Name
+      value: Lampadaire Moderne (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+--- !u!4 &5823943033197446306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+  m_PrefabInstance: {fileID: 6731562496803830181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8422753780764411667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7548104086722282029}
+    m_Modifications:
+    - target: {fileID: 500547812853639101, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_Name
+      value: Lampadaire Moderne (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+--- !u!4 &8744368464598645268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 988994465224801543, guid: 9c0405cb8876515448ef790f5130eea1, type: 3}
+  m_PrefabInstance: {fileID: 8422753780764411667}
+  m_PrefabAsset: {fileID: 0}
