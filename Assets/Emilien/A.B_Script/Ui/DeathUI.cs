@@ -13,6 +13,8 @@ public class DeathUI : MonoBehaviour
     public InventoryPlayer _InventoryPlayer;
     public DataSave _DataSave;
 
+    public bool isShieldActive = false;
+
     public void Awake() {
         ThisUI = gameObject.GetComponent<RectTransform>();
     }
@@ -25,6 +27,7 @@ public class DeathUI : MonoBehaviour
             _InventoryPlayer.pieceNumber -= 50;
             Player.SetActive(true);
             ThisUI.DOAnchorPos(new Vector2(0, 2436), 0.2f, false);
+            isShieldActive = true;
         }
         else return;
     }

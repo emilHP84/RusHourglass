@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine.Serialization;
 
@@ -11,8 +12,11 @@ public class MouvementPlayer : MonoBehaviour
     [Header("Special")]
     public Camera cam;
     public InventoryPlayer _InventoryPlayer;
+    public DeathUI _DeathUI;
+    public BoxCollider _box;
     public GameObject CameraOne;
     public GameObject CameraTwo;
+    public GameObject shield;
     
     private Vector3 camPosition;
 
@@ -28,6 +32,7 @@ public class MouvementPlayer : MonoBehaviour
     [Header("speed")] 
     public float duringDash;
     public float AddPointsTime;
+    public float shieldTime;
 
     [Header("Valeur fluctuante")] 
     public float ValueXNormal;
@@ -37,6 +42,7 @@ public class MouvementPlayer : MonoBehaviour
     
     public void Awake() {
         _asTp = false;
+        _box = _box.GetComponent<BoxCollider>();
     }
 
     public void Start() {
@@ -47,10 +53,15 @@ public class MouvementPlayer : MonoBehaviour
         ValueXNormal = 0;
         ValueXLimitRight = 1;
         ValueXLimitLeft = -1;
+        shield.SetActive(false);
     }
 
     public void Update() {
         AddPointsTime += Time.deltaTime;
+
+        if (_DeathUI.isShieldActive == true) {
+           Shield(); 
+        }
         
         if (gameObject.activeSelf == false) {
             _InventoryPlayer.pointNumber += 0;
@@ -138,6 +149,19 @@ public class MouvementPlayer : MonoBehaviour
             actualValue = ValueXLimitLeft;
             gameObject.transform.DOMove(new Vector3(ValueXLimitLeft, 0.75f, 0), duringDash);
             cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+        }
+    }
+    
+    public void Shield() {
+        shield.SetActive(true);
+        _box.enabled = false;
+        
+        shieldTime += Time.deltaTime;
+        if (shieldTime >= 5) {
+            shield.SetActive(false); 
+            _box.enabled = true;
+            shieldTime = 0f;
+            _DeathUI.isShieldActive = false;
         }
     }
 
