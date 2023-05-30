@@ -73,33 +73,7 @@ public class MouvementPlayer : MonoBehaviour
         }
 
         if (Input.GetKeyUp(KeyCode.Space)) {
-            if (_asTp == false) {
-               _asTp = true;
-               CameraOne.SetActive(false);
-               CameraTwo.SetActive(true);
-               
-               ValueXNormal += 30;
-               ValueXLimitRight += 30;
-               ValueXLimitLeft += 30;
-               actualValue += 30;
-                
-                gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
-                return;
-            }
-            if (_asTp == true) {
-                _asTp = false;
-                CameraOne.SetActive(true);
-                CameraTwo.SetActive(false);
-
-                ValueXNormal -= 30;
-                ValueXLimitRight -= 30;
-                ValueXLimitLeft -= 30;
-                actualValue -= 30;
-                
-                gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
-                return;
-            }
-            return;
+           Up();
         }
         Mouvement();
     }
@@ -108,7 +82,7 @@ public class MouvementPlayer : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
             StartTouch = Input.GetTouch(0).position;
             if (EndTouch.y > StartTouch.y) {
-                Left();
+                
             }
         }
 
@@ -121,7 +95,7 @@ public class MouvementPlayer : MonoBehaviour
             if (EndTouch.x > StartTouch.x) {
                 Right();
             }
-            if (EndTouch.y <= StartTouch.y) {
+            if (EndTouch.y > StartTouch.y && EndTouch.y > EndTouch.x) {
                 Up();
             }
         }
@@ -162,7 +136,7 @@ public class MouvementPlayer : MonoBehaviour
             ValueXLimitLeft += 30;
             actualValue += 30;
                 
-            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
+            //gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
             return;
         }
         if (_asTp == true) {
@@ -175,12 +149,11 @@ public class MouvementPlayer : MonoBehaviour
             ValueXLimitLeft -= 30;
             actualValue -= 30;
                 
-            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
+            //gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
             return;
         }
         return;
     }
-    
     
     public void Shield() {
         shield.SetActive(true);
@@ -194,7 +167,6 @@ public class MouvementPlayer : MonoBehaviour
             _DeathUI.isShieldActive = false;
         }
     }
-
     
     public void Mouvement() {
         
@@ -210,28 +182,20 @@ public class MouvementPlayer : MonoBehaviour
         
         if (possibleLeftMove == true && possibleRightMove == false) {
             if (Input.GetKeyDown(KeyCode.Q)) {
-                actualValue = ValueXNormal;
-                gameObject.transform.DOMove(new Vector3(ValueXNormal, 0.75f, 0), duringDash);
-                cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);
+                Left();
             }
         }
         if (possibleLeftMove == false && possibleRightMove == true) {
             if (Input.GetKeyDown(KeyCode.D)) {
-                actualValue = ValueXNormal;
-                gameObject.transform.DOMove(new Vector3(ValueXNormal, 0.75f, 0), duringDash);
-                cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+                Right();
             }
         }
             
         if (Input.GetKeyDown(KeyCode.D) && possibleRightMove == true && possibleLeftMove == true) {
-            actualValue = ValueXLimitRight;
-            gameObject.transform.DOMove(new Vector3(ValueXLimitRight, 0.75f, 0), duringDash);
-            cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+            Right();
         }
         if (Input.GetKeyDown(KeyCode.Q) && possibleLeftMove == true && possibleRightMove == true) {
-            actualValue = ValueXLimitLeft;
-            gameObject.transform.DOMove(new Vector3(ValueXLimitLeft, 0.75f, 0), duringDash);
-            cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
+            Left();
         }
     }
 }

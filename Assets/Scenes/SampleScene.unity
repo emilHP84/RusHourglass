@@ -281,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16509791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 30}
+  m_LocalPosition: {x: 15, y: 0, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1628,9 +1628,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1953582950}
-  ThisUI: {fileID: 0}
+  ThisUI: {fileID: 996466217}
   _InventoryPlayer: {fileID: 11400000, guid: 8e66fe4e9d1befd489fd120e3a8d0a03, type: 2}
-  _DataSave: {fileID: 0}
+  _DataSave: {fileID: 716857432}
   isShieldActive: 0
 --- !u!114 &996466219
 MonoBehaviour:

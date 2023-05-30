@@ -33,6 +33,7 @@ public class DeathUI : MonoBehaviour
     }
     
     public void Retry() {
+        _DataSave.SaveToJson();
         SceneManager.LoadScene("SampleScene");
         ThisUI.DOAnchorPos(new Vector2(0,2436 ),0.2f,false);
     }
