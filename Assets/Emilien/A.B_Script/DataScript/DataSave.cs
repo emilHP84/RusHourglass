@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using File = OpenCover.Framework.Model.File;
-
 public class DataSave : MonoBehaviour
 {
     public ScriptableObject inventoryPlayer;
@@ -12,7 +10,7 @@ public class DataSave : MonoBehaviour
     
     public void Awake() {
         string filePathData = Application.persistentDataPath + "/CoinsData.json";
-        if (UnityEngine.Windows.File.Exists(filePathData) == false) {
+        if (File.Exists(filePathData) == false) {
             Debug.Log("test");
             SaveToJson();
         }

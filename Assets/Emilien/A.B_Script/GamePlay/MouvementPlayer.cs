@@ -57,6 +57,7 @@ public class MouvementPlayer : MonoBehaviour
     }
 
     public void Update() {
+        Swipe();
         AddPointsTime += Time.deltaTime;
 
         if (_DeathUI.isShieldActive == true) {
@@ -121,7 +122,7 @@ public class MouvementPlayer : MonoBehaviour
                 Right();
             }
             if (EndTouch.y <= StartTouch.y) {
-                return;
+                Up();
             }
         }
     }
@@ -138,7 +139,6 @@ public class MouvementPlayer : MonoBehaviour
             cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
         }
     }
-    
     public void Left() {
         if (possibleLeftMove == true && possibleRightMove == false) {
             actualValue = ValueXNormal;
@@ -151,6 +151,36 @@ public class MouvementPlayer : MonoBehaviour
             cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
         }
     }
+    public void Up() {
+        if (_asTp == false) {
+            _asTp = true;
+            CameraOne.SetActive(false);
+            CameraTwo.SetActive(true);
+               
+            ValueXNormal += 30;
+            ValueXLimitRight += 30;
+            ValueXLimitLeft += 30;
+            actualValue += 30;
+                
+            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
+            return;
+        }
+        if (_asTp == true) {
+            _asTp = false;
+            CameraOne.SetActive(true);
+            CameraTwo.SetActive(false);
+
+            ValueXNormal -= 30;
+            ValueXLimitRight -= 30;
+            ValueXLimitLeft -= 30;
+            actualValue -= 30;
+                
+            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
+            return;
+        }
+        return;
+    }
+    
     
     public void Shield() {
         shield.SetActive(true);
@@ -165,6 +195,7 @@ public class MouvementPlayer : MonoBehaviour
         }
     }
 
+    
     public void Mouvement() {
         
         if (gameObject.transform.position.x == ValueXLimitRight) {
