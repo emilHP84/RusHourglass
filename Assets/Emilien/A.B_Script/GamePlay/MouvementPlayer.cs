@@ -9,13 +9,14 @@ using UnityEngine.Serialization;
 
 public class MouvementPlayer : MonoBehaviour
 {
-    [Header("Special")]
-    public Camera cam;
+    [Header("Special")] 
+    public CameraRenderer _CameraRenderer;
     public InventoryPlayer _InventoryPlayer;
     public DeathUI _DeathUI;
+    
+    [Header("Special Locale")] 
     public BoxCollider _box;
-    public GameObject CameraOne;
-    public GameObject CameraTwo;
+    public Camera cam;
     public GameObject shield;
     
     private Vector3 camPosition;
@@ -72,7 +73,7 @@ public class MouvementPlayer : MonoBehaviour
             AddPointsTime = 0;
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
            Up();
         }
         Mouvement();
@@ -128,28 +129,24 @@ public class MouvementPlayer : MonoBehaviour
     public void Up() {
         if (_asTp == false) {
             _asTp = true;
-            CameraOne.SetActive(false);
-            CameraTwo.SetActive(true);
+            _CameraRenderer.ScreenfadeOne();
                
             ValueXNormal += 30;
             ValueXLimitRight += 30;
             ValueXLimitLeft += 30;
             actualValue += 30;
-                
-            //gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
+            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0f);
             return;
         }
         if (_asTp == true) {
             _asTp = false;
-            CameraOne.SetActive(true);
-            CameraTwo.SetActive(false);
+            _CameraRenderer.ScreenfadeTwo();
 
             ValueXNormal -= 30;
             ValueXLimitRight -= 30;
             ValueXLimitLeft -= 30;
             actualValue -= 30;
-                
-            //gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0);
+            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0f);
             return;
         }
         return;
