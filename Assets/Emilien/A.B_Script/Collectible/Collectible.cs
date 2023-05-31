@@ -6,7 +6,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     [SerializeField] private InventoryPlayer inventoryPlayer;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _particleSystem;
     
     public void OnTriggerEnter(Collider other) {
         if (other.name == "Player") {

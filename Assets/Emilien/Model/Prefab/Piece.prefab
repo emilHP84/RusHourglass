@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPlayer: {fileID: 11400000, guid: 8e66fe4e9d1befd489fd120e3a8d0a03, type: 2}
+  _particleSystem: {fileID: 7258564480700134256, guid: f32f2503bd602244a9a241fb6df272b5, type: 3}

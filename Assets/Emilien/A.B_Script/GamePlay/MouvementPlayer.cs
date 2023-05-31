@@ -12,8 +12,7 @@ public class MouvementPlayer : MonoBehaviour
     [Header("Special")] 
     public CameraRenderer _CameraRenderer;
     public InventoryPlayer _InventoryPlayer;
-    public DeathUI _DeathUI;
-    
+
     [Header("Special Locale")] 
     public BoxCollider _box;
     public Camera cam;
@@ -30,6 +29,8 @@ public class MouvementPlayer : MonoBehaviour
     public bool possibleRightMove;
     public bool possibleLeftMove;
     
+    public bool isShieldActive = false;
+
     [Header("speed")] 
     public float duringDash;
     public float AddPointsTime;
@@ -61,7 +62,7 @@ public class MouvementPlayer : MonoBehaviour
         Swipe();
         AddPointsTime += Time.deltaTime;
 
-        if (_DeathUI.isShieldActive == true) {
+        if (isShieldActive == true) {
            Shield(); 
         }
         
@@ -101,7 +102,6 @@ public class MouvementPlayer : MonoBehaviour
             }
         }
     }
-
     public void Right() {
         if (possibleLeftMove == false && possibleRightMove == true) {
             actualValue = ValueXNormal;
@@ -135,7 +135,7 @@ public class MouvementPlayer : MonoBehaviour
             ValueXLimitRight += 30;
             ValueXLimitLeft += 30;
             actualValue += 30;
-            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0f);
+            gameObject.transform.position = new Vector3(actualValue, 0.75f, 0);
             return;
         }
         if (_asTp == true) {
@@ -146,10 +146,9 @@ public class MouvementPlayer : MonoBehaviour
             ValueXLimitRight -= 30;
             ValueXLimitLeft -= 30;
             actualValue -= 30;
-            gameObject.transform.DOMove(new Vector3(actualValue, 0.75f, 0), 0f);
+            gameObject.transform.position = new Vector3(actualValue, 0.75f, 0);
             return;
         }
-        return;
     }
     
     public void Shield() {
@@ -157,11 +156,11 @@ public class MouvementPlayer : MonoBehaviour
         _box.enabled = false;
         
         shieldTime += Time.deltaTime;
-        if (shieldTime >= 5) {
+        if (shieldTime >= 5 && _box.enabled == false) {
             shield.SetActive(false); 
             _box.enabled = true;
             shieldTime = 0f;
-            _DeathUI.isShieldActive = false;
+            isShieldActive = false;
         }
     }
     

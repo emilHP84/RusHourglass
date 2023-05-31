@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveModule : MonoBehaviour
 {
     [Header("Gameobject")]
-    public int _speed = 10;
+    public float _speed = 10;
     
     private float time;
     
