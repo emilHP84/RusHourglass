@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,19 +6,23 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     public Animator anim;
+    public float time;
 
-    void Start()
-    {
+    void Start() {
+        time = 0;
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        anim.SetBool("Straf", true);
+    private void Update() {
+        time += Time.deltaTime;
     }
 
     public void RightAnim() {
-        
+        time = 0;
+        anim.SetBool("isStraffing", true);
+        if (time >= 1) {
+            anim.SetBool("isStraffing", false);
+        }
     }
+    
 }

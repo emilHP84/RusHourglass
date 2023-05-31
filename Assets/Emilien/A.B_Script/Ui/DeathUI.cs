@@ -22,8 +22,8 @@ public class DeathUI : MonoBehaviour
     }
 
     public void Continue() {
-        if (_InventoryPlayer.pieceNumber >= 50 && ThisUI.anchoredPosition.y <= 2430 ) {
-            _InventoryPlayer.pieceNumber -= 50;
+        if (_InventoryPlayer.pieceNumber >= 500 && ThisUI.anchoredPosition.y <= 2430 ) {
+            _InventoryPlayer.pieceNumber -= 500;
             Player.SetActive(true);
             ThisUI.DOAnchorPos(new Vector2(0, 2436), 0.2f, false);
             _MouvementPlayer.isShieldActive = true;
@@ -38,7 +38,7 @@ public class DeathUI : MonoBehaviour
     }
     public void Quit() {
         _DataSave.SaveToJson();
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("UI");
         ThisUI.DOAnchorPos(new Vector2(0, 2436),0.2f,false);
     }
 }

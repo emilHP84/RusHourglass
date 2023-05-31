@@ -12,6 +12,8 @@ public class MouvementPlayer : MonoBehaviour
     [Header("Special")] 
     public CameraRenderer _CameraRenderer;
     public InventoryPlayer _InventoryPlayer;
+    public AnimationManager _AnimationManager;
+    public SoundManager _SoundManager;
 
     [Header("Special Locale")] 
     public BoxCollider _box;
@@ -87,17 +89,15 @@ public class MouvementPlayer : MonoBehaviour
                 
             }
         }
-
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
             EndTouch = Input.GetTouch(0).position;
-
-            if (EndTouch.x < StartTouch.x) {
+            if (EndTouch.x < StartTouch.x + 0.1f && EndTouch.x > EndTouch.y + 0.1f) {
                 Left();
             }
-            if (EndTouch.x > StartTouch.x) {
+            if (EndTouch.x > StartTouch.x +0.1f && EndTouch.x > EndTouch.y + 0.1f) {
                 Right();
             }
-            if (EndTouch.y > StartTouch.y && EndTouch.y > EndTouch.x) {
+            if (EndTouch.y > StartTouch.y + 0.1f && EndTouch.y > EndTouch.x + 0.1f) {
                 Up();
             }
         }
@@ -105,10 +105,12 @@ public class MouvementPlayer : MonoBehaviour
     public void Right() {
         if (possibleLeftMove == false && possibleRightMove == true) {
             actualValue = ValueXNormal;
+            _AnimationManager.RightAnim();
             gameObject.transform.DOMove(new Vector3(ValueXNormal, 0.75f, 0), duringDash);
             cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
         }
         if (possibleRightMove == true && possibleLeftMove == true) {
+            _AnimationManager.RightAnim();
             actualValue = ValueXLimitRight;
             gameObject.transform.DOMove(new Vector3(ValueXLimitRight, 0.75f, 0), duringDash);
             cam.DOShakePosition(0.2f, 0.06f).OnComplete(() => cam.transform.position = camPosition);;
@@ -130,6 +132,7 @@ public class MouvementPlayer : MonoBehaviour
         if (_asTp == false) {
             _asTp = true;
             _CameraRenderer.ScreenfadeOne();
+            _SoundManager.Fpriority();
                
             ValueXNormal += 30;
             ValueXLimitRight += 30;
@@ -141,6 +144,7 @@ public class MouvementPlayer : MonoBehaviour
         if (_asTp == true) {
             _asTp = false;
             _CameraRenderer.ScreenfadeTwo();
+            _SoundManager.Ppriority();
 
             ValueXNormal -= 30;
             ValueXLimitRight -= 30;
