@@ -1,8 +1,7 @@
 using System.Collections.Generic;
+using Emilien.A.B_Script.Utils;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-
 
 public class ModuleManager : MonoBehaviour
 { 
@@ -26,28 +25,48 @@ public class ModuleManager : MonoBehaviour
     private int moduleChoose;
     private int houseChoose;
 
-    private void OnEnable() {
+    private void Start() {
         moduleChoose = Random.Range(0,16);
-        Instantiate(modernModule[moduleChoose], TransformInstanceOne.transform);
-        Instantiate(industrialModule[moduleChoose], TransformInstanceTwo.transform);
+        ModulePool.Pool(modernModule[moduleChoose], TransformInstanceOne.transform);
+        ModulePool.Pool(industrialModule[moduleChoose], TransformInstanceTwo.transform);
 
         if (moduleChoose == 0) {
-            Instantiate(roadModernModule[0], TransformInstanceOne.transform);
-            Instantiate(roadIndustrialModule[0], TransformInstanceTwo.transform);
+            ModulePool.Pool(roadModernModule[0], TransformInstanceOne.transform);
+            ModulePool.Pool(roadIndustrialModule[0], TransformInstanceTwo.transform);
         }
         else if (moduleChoose == 1) {
-            Instantiate(roadModernModule[1], TransformInstanceOne.transform); 
-            Instantiate(roadIndustrialModule[1], TransformInstanceTwo.transform);
+            ModulePool.Pool(roadModernModule[1], TransformInstanceOne.transform); 
+            ModulePool.Pool(roadIndustrialModule[1], TransformInstanceTwo.transform);
         }
         else if (moduleChoose >= 2) {
-            Instantiate(roadModernModule[2], TransformInstanceOne.transform); 
-            Instantiate(roadIndustrialModule[2], TransformInstanceTwo.transform);
+            ModulePool.Pool(roadModernModule[2], TransformInstanceOne.transform); 
+            ModulePool.Pool(roadIndustrialModule[2], TransformInstanceTwo.transform);
             
             for (int i = 0; i < 6; i++) {
                 houseChoose = Random.Range(0, 7);
-                Instantiate(ModernHouse[houseChoose],transformHouseModern[i].transform );
-                Instantiate(IndustrialHouse[houseChoose],transformHouseIndustrial[i].transform );
+                ModulePool.Pool(ModernHouse[houseChoose],transformHouseModern[i].transform );
+                ModulePool.Pool(IndustrialHouse[houseChoose],transformHouseIndustrial[i].transform );
             }
         }
     }
+
+    public void Destroy() {
+        TransformInstanceOne.transform.GetChild(0).gameObject.SetActive(false);
+        TransformInstanceOne.transform.GetChild(0).parent = Spawnner.Pool;
+
+        TransformInstanceTwo.transform.GetChild(0).gameObject.SetActive(false);
+        TransformInstanceTwo.transform.GetChild(0).parent = Spawnner.Pool;
+        for (int i = 0; i < 6; i++) {
+            if (transformHouseModern[i].transform.childCount > 0) {
+                transformHouseModern[i].transform.GetChild(0).gameObject.SetActive(false);
+                transformHouseModern[i].transform.GetChild(0).parent = Spawnner.Pool;
+            }
+            if (transformHouseIndustrial[i].transform.childCount > 0) {
+                transformHouseIndustrial[i].transform.GetChild(0).gameObject.SetActive(false);
+                transformHouseIndustrial[i].transform.GetChild(0).parent = Spawnner.Pool;
+            }
+        }
+        Destroy(gameObject);
+    }
+    
 }

@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public class Manager : MonoBehaviour
@@ -9,6 +5,7 @@ public class Manager : MonoBehaviour
     public InventoryPlayer _InventoryPlayer;
     void Start() {
         _InventoryPlayer.pointNumber = 0;
+        QualitySettings.vSyncCount = 0;
     }
 
     private void Update() {

@@ -91,15 +91,34 @@ public class MouvementPlayer : MonoBehaviour
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
             EndTouch = Input.GetTouch(0).position;
-            if (EndTouch.x < StartTouch.x + 0.1f && EndTouch.x > EndTouch.y + 0.1f) {
+            Vector2 translation = EndTouch - StartTouch;
+
+            if (Mathf.Abs(translation.x) > Mathf.Abs(translation.y)) {
+                if (translation.x > 0) {
+                    Right();
+                }
+                else {
+                    Left();
+                }
+            }
+            else {
+                if (translation.y > 0) {
+                    Up();
+                }
+            }
+            
+            /*if (EndTouch.x < StartTouch.x + 0.1f && EndTouch.x < translation.y + 0.1f) {
                 Left();
             }
-            if (EndTouch.x > StartTouch.x +0.1f && EndTouch.x > EndTouch.y + 0.1f) {
+            if (EndTouch.x > StartTouch.x + 0.1f && EndTouch.x > EndTouch.y + 0.1f) {
                 Right();
             }
             if (EndTouch.y > StartTouch.y + 0.1f && EndTouch.y > EndTouch.x + 0.1f) {
                 Up();
-            }
+            } 
+            if (EndTouch.y < StartTouch.y + 0.1f && EndTouch.y > translation.x + 0.1f) {
+                Up();
+            }*/
         }
     }
     public void Right() {

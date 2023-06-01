@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Spawnner : MonoBehaviour
 {
@@ -9,6 +6,8 @@ public class Spawnner : MonoBehaviour
     [Header("Instanciate object")]
     public GameObject Module;
     public GameObject TransformInstance;
+    
+    public static Transform Pool;
 
     public float spawnTime;
     
@@ -18,9 +17,10 @@ public class Spawnner : MonoBehaviour
     public void Start() {
         time = 0;
         canInstance = true;
+        Pool = GameObject.FindWithTag("Pool").transform;
     }
     
-    public void FixedUpdate() {
+    public void Update() {
         time += Time.deltaTime;
 
         if (time >= spawnTime && canInstance) {
@@ -28,4 +28,5 @@ public class Spawnner : MonoBehaviour
             time = 0;
         }
     }
+
 }
